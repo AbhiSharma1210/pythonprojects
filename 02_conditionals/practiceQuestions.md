@@ -1,4 +1,4 @@
-# questions on conditionals
+# Questions on conditionals
 
 <details>
 <summary>1. Age Group Categorization
