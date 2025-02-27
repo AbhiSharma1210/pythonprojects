@@ -54,7 +54,8 @@ Problem: Customize a coffee order: "Small", "Medium", or "Large" with an option 
 <details>
 <summary>8. Password Strength Checker
 </summary>
-Problem: Check if a password is "Weak", "Medium", or "Strong". Criteria: < 6 chars (Weak), 6-10 chars (Medium), >10 chars (Strong).
+Problem: Check if a password is "Weak", "Medium", or "Strong". Criteria: < 6 chars (Weak), 6-10 chars (Medium), >10 chars (Strong).</br>
+(optional) Check if password has alphabets, numbers and special characters.
 
 </details>
 
