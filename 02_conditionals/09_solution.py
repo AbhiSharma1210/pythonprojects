@@ -9,6 +9,8 @@ try:
                 print("Not a leap year")
         else:
             print("Leap year")
+    else:
+        print("Not a Leap year")
         
 except ValueError:
     print("Please enter a valid year")
