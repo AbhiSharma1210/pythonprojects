@@ -1,7 +1,8 @@
+import math
 def circle(radius):
-    pi = 3.1415
-    area = pi * (radius ** 2)
-    circumference = 2 * pi * radius
+    # pi = 3.1415
+    area = math.pi * (radius ** 2)
+    circumference = 2 * math.pi * radius
     # returning the trimmed values upto 2 decimal places
     area = round(area, 2)
     circumference = round(circumference, 2)
