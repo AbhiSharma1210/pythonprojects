@@ -20,7 +20,7 @@ class Car:
         return "Petrol"
 class ElectricCar(Car):
     def __init__(self, brand, name):
-        super.__init__(brand, name)
+        super().__init__(brand, name)
     
     def fuel_type(self):
         return "Electric"
@@ -28,5 +28,6 @@ class ElectricCar(Car):
 myCar = Car("Mitsubishi", "Lancer Evolution 8")
 myElectricCar = ElectricCar("Tesla", "Model S")
 print(myCar.fuel_type())
-print(myElectricCar.fuel_type())  
+print(myElectricCar.fuel_type())
+
         
