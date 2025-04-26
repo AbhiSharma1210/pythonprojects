@@ -30,5 +30,21 @@ class Car:
         raise AttributeError("Cannot delete the total registered cars count.")
     
 # Inheritance
-class ElectricCar(Car)
+class ElectricCar(Car):
+    def __init__(self, brand, name, battery_size=75):
+        super().__init__(brand, name)  # Call the parent class constructor
+        self.battery_size = battery_size
+    
+    def full_name(self):
+        return f"{self.brand} {self.name} with {self.battery_size}-kWh battery"
+
+myTesla = ElectricCar("Tesla", "Model S", 100)
+myCar = Car("Toyota", "Corolla")
+
+print(isinstance(myTesla, ElectricCar))  # The isinstance() function will return a boolean value
+print(isinstance(myTesla, Car))  
+print(isinstance(myTesla, str))  
+
+print(isinstance(myCar, ElectricCar)) # Since myCar is an instance of Car, it will return False
+print(isinstance(myCar, Car))
         
