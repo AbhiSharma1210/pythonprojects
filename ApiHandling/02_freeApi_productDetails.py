@@ -1,6 +1,6 @@
 import requests
 
-# Correct product Id = 30
+# Correct product Id = between 1 - 100 both inclusive
 def fetch_product_by_id(productId):
     api_url = f"https://api.freeapi.app/api/v1/public/randomproducts/{productId}"
     response = requests.get(api_url)
@@ -16,13 +16,16 @@ def fetch_product_by_id(productId):
             print("data not found in the response")
     else:
         print(f"Request failed with response code: {response.status_code}")
+        return 
         
 
 def main():
     try:
         productId = input("Enter the product Id: ")
-        title, brand, category = fetch_product_by_id(productId)
-        if title and brand and category:
+        result = fetch_product_by_id(productId)
+
+        if result:  # check if it's not None
+            title, brand, category = result
             print(f"Product Title: {title}")
             print(f"Product Brand: {brand}")
             print(f"Product Category: {category}")
@@ -31,6 +34,7 @@ def main():
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
         return
+    
 
 if __name__ == "__main__":
     main()
