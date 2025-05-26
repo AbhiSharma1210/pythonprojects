@@ -7,7 +7,11 @@ load_dotenv()
 
 username = os.getenv("MONGO_USERNAME")
 password = os.getenv("MONGO_PASSWORD")
+db_name = os.getenv("MONGO_DB_NAME")
 
-mongo_url = f"mongodb+srv://{username}:{password}@youtubemanager.r815rm8.mongodb.net/"
+mongo_uri = f"mongodb+srv://{username}:{password}@{db_name}.r815rm8.mongodb.net/"
 
-client = MongoClient(mongo_url)
+client = MongoClient(mongo_uri)
+
+db = client[db_name]
+
