@@ -20,20 +20,27 @@ yt_collection = db["videos"]
 print(yt_collection)
 
 def list_all_videos():
+    if yt_collection.count_documents({}) == 0:
+        print("No videos found in the collection.")
+        return
+    print("Listing all youtube videos:")
+    print("=====================================")
+    
     for video in yt_collection.find():
-        print(f"Id: {video['_id']} Name: {video['name']} Time:{video['runTime']}")
+        print(f"Id: {video['_id']} Name: {video['name']} Time:{video['time']}")
     
 
 def add_new_video(name, runTime):
     yt_collection.insert_one({"name": name, "time": runTime})
 
-def replace_video(videoId, name, runTime):
+def replace_video(videoId, newName, newRunTime):
     yt_collection.update_one(
         {'_id': videoId},
-        {})
+        {'$set': {'name': newName, 'runTime': newRunTime}}
+    )
 
 def delete_video(videoId):
-    pass
+    yt_collection.delete_one({'_id': videoId})
 
 def main():
     while True:
