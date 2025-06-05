@@ -36,7 +36,7 @@ def add_new_video(name, runTime):
 def replace_video(videoId, newName, newRunTime):
     yt_collection.update_one(
         {'_id': videoId},
-        {'$set': {'name': newName, 'runTime': newRunTime}}
+        {'$set': {'name': newName, 'time': newRunTime}}
     )
 
 def delete_video(videoId):
