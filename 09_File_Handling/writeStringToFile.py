@@ -11,11 +11,6 @@ def handle_file(file_name, userStr):
     except FileNotFoundError:
         print(f"The {file_name} is not found. Please try again.")
 
-# def write_to_file(file_name, userStr):
-#     pass     
-
-# def display_file(file_name):
-#     pass
 
 def main():
     print("Add a string to a file.")
