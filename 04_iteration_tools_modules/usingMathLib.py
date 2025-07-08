@@ -9,10 +9,10 @@ def power_of_number(numA, numB):
     return f"{numA} to power {numB} is {math.pow(numA, numB)}"
 
 def trigonometry(angle):
-    angle_deg = 30
+    angle_deg = angle
     angle_rad = math.radians(angle_deg)
 
-    print(f"Sine of {angle_deg} degrees:", math.sin(angle_rad))
+    return f"Sine of {angle_deg} degrees: {round(math.sin(angle_rad), 2)}"
 
 def main():
     print("Select one of the following.")
@@ -39,7 +39,18 @@ def main():
                     print(f"Error, {e}")
             
             case 3:
-                pass
+                print("-"*50)
+                print("Enter 30, 45, 60 or 90 as an input")
+                try:
+                    userAngle = input("Enter the correct angle: ")
+                    list_angles = [30, 45, 60, 90]
+                    angle = int(userAngle)
+                    if angle not in list_angles:
+                        print("Incorrect input. Please enter only the specified values.")
+                    else:
+                        print(trigonometry(angle))
+                except ValueError as e:
+                    print(f"Error, {e}")
 
     except ValueError as e:
         print(f"Error, {e}")
